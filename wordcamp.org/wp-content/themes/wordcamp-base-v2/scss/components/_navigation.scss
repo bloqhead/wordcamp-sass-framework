@@ -1,0 +1,170 @@
+#masthead {
+
+	// Main navigation
+	.main-navigation,
+	.main-small-navigation {
+		position: fixed;
+		top: 0;
+		right: 0;
+		left: 0;
+		z-index: 10;
+		background: $red;
+
+		> [class^="menu-"] {
+			@include outer-container;
+			@include rem(font-size, 1.8);
+
+			.nav-menu,
+			.menu {
+				display: block;
+				text-align: center;
+				margin: 0;
+				padding: 0;
+
+				> li {
+					display: inline-block;
+					text-align: center;
+					float: none;
+					margin-left: -4px;
+
+					@media screen and (max-width: 767px) {
+						text-align: left;
+						display: block;
+
+						a {
+							@include rem(padding-top, 1.0);
+							@include rem(padding-right, 2.0);
+							@include rem(padding-bottom, 1.0);
+							@include rem(padding-left, 2.0);
+						}
+					}
+
+					&:first-of-type {
+
+					}
+
+					&.current_page_item a {
+						background: darken($red, 5);
+						position: relative;
+						color: $white;
+
+						&:after {
+							position: absolute;
+							bottom: 0;
+							right: 0;
+							left: 0;
+							background: darken($red, 15);
+							height: 6px;
+							content: "";
+						}
+					}
+				}
+
+				a {
+					display: block;
+					position: relative;
+					color: $gold;
+					font-weight: 600;
+					text-decoration: none;
+					@include rem(padding, 2.0);
+					@include transition(0.2s all ease-in-out);
+
+					&:after {
+						position: absolute;
+						bottom: 0;
+						right: 0;
+						left: 0;
+						background: lighten($red, 10);
+						height: 0;
+						content: "";
+						@include transition(0.2s all ease-in-out);
+					}
+
+					&:hover {
+						background: darken($red, 5);
+						color: $white;
+
+						&:after {
+							height: 6px;
+						}
+					}
+				}
+
+				.sub-menu {
+					background: $dark-gray !important;
+					top: 100%;
+					@include cleanlist;
+
+					> li {
+						text-align: left;
+					}
+
+					a {
+						background: $dark-gray !important;
+						color: $white;
+						@include rem(padding, 1.5);
+
+						&:after {
+							display: none !important;
+						}
+
+						&:hover {
+							background: lighten($dark-gray, 5);
+						}
+					}
+				}
+
+			}
+		}
+	}
+
+	.main-small-navigation [class*="menu-container"] .menu {
+		display: none;
+	}
+
+	.main-navigation [class*="menu-container"] .menu {
+		@media screen and (max-width: 767px) {
+			display: none;
+		}
+
+		@media screen and (max-width: 1023px) {
+			@include rem(font-size, 1.4);
+		}
+	}
+}
+
+// Mobile menu trigger
+.menu-toggle {
+	background: none;
+	border: none;
+	border-radius: 0;
+	display: none;
+	font-size: 0 !important;
+	color: transparent !important;
+	text-shadow: none;
+	text-align: center;
+	line-height: 1;
+	padding: 0;
+	margin: 0;
+	outline: none;
+	@include box-shadow(none);
+
+	&:before {
+		display: block;
+		content: "\f0c9" !important;
+		@include rem(font-size, 3.2);
+		font-family: 'FontAwesome' !important;
+		color: lighten($red, 25);
+		padding: 0.25em 0.8em;
+		margin: 0 auto;
+	}
+
+	&:after {
+		display: none !important;
+	}
+
+	@media screen and (max-width: 1023px) {
+		display: block !important;
+		visibility: visible !important;
+	}
+}

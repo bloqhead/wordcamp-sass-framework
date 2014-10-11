@@ -1,0 +1,34 @@
+.wcpt-schedule {
+
+	a {
+		text-decoration: none;
+	}
+
+	.wcpt-time {
+
+	}
+
+	.wcpt-session-title {
+		font-weight: bold;
+		display: block;
+	}
+
+	.wcpt-session-speakers {
+		background: $light-gray;
+		display: block;
+		margin-top: 0.5em;
+		padding: 0.3em;
+		font-size: 0.8em;
+
+		&, a {
+			color: $blue;
+		}
+
+		a {
+
+			&:before {
+				margin-right: 0.3em;
+			}
+		}
+	}
+}

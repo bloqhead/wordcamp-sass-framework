@@ -1,0 +1,56 @@
+#tix-attendees {
+
+	.tix-attendee-list {
+		@include outer-container;
+
+		.avatar {
+			@include avatar;
+		}
+
+		.tix-attendee-name {
+			font-weight: bold;
+			color: $red;
+		}
+	}
+
+	.tix-attendee-url {
+		display: block;
+		max-width: 100%;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+
+	@media screen and (max-width: 767px) {
+		 .tix-columns-3 li {
+		 	@include span-columns(6);
+
+		 	.tix-field {
+		 		font-size: 0.9em !important;
+		 	}
+
+		 	&:nth-child(2n) {
+				margin-right: 0 !important;
+				padding-right: 0 !important;
+			}
+		}
+	}
+
+	@media screen and (max-width: 639px) {
+		.tix-columns-3 li {
+			width: 100% !important;
+			height: auto !important;
+			padding-left: 0 !important;
+			margin-left: 0 !important;
+			margin-bottom: 10px;
+			padding-top: 10px;
+			padding-bottom: 10px;
+			border-bottom: 1px solid $light-gray;
+			@include box-sizing(border-box);
+
+			.tix-field {
+		 		font-size: 1.2em !important;
+		 	}
+		}
+	}
+}

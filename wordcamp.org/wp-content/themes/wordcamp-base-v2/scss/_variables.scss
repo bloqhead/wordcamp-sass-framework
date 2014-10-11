@@ -1,0 +1,58 @@
+//
+// Variables
+//
+
+// Settings
+$max-width: 		1140px;
+
+// Fonts / Font sizes
+$base-font-size: 		2.0; // 20px - these are calculated through a REM mixin
+$base-font-size-alt: 	1.6; // 16px
+$sans-serif: 			'Helvetica Neue', Helvetica, Arial, sans-serif;
+$serif: 				'Georgia', Cambria, Times New Roman, Times, serif;
+$body-font: 			$sans-serif;
+$header-font: 			$serif;
+
+// Paths
+$i: 					'img';
+
+// Colors
+$ui-color-1: #0b0b0b; // gray
+$ui-color-2: #000;
+$ui-color-3: #067fc3; // blue
+$ui-color-4: #be3c3a; // red
+
+// Color palette
+// @examples
+// .element { palette(gray); }
+// .element { palette(gray, light); }
+// .element { palette(gray, dark); }
+$color-palettes: (
+	gray: (
+		light 	: lighten($gray, 15%),
+		base 	: $gray,
+		dark 	: darken($gray, 10%)
+	),
+	black: (
+		light 	: lighten($black, 15%),
+		base 	: $black
+	),
+	blue: (
+		light 	: lighten($blue, 15%),
+		base 	: $blue,
+		dark 	: darken($blue, 10%)
+	),
+	red: (
+		light 	: lighten($blue, 15%),
+		base 	: $blue,
+		dark 	: darken($blue, 10%)
+	)
+);
+
+// Breakpoints
+$xs: ( max: 767px );
+$sm: ( min: 768px );
+$md: ( min: 992px );
+$lg: ( min: 1200px );
+$sm-only: ( min: map-get( $sm, min ), max: map-get( $md, min ) - 1 );
+$md-only: ( min: map-get( $md, min ), max: map-get( $lg, min ) - 1 );

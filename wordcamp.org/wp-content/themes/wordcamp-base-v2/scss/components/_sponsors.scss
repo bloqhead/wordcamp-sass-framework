@@ -1,0 +1,67 @@
+#secondary {
+
+	.wcb_widget_sponsors {
+
+		// Base elements
+		.sponsor-level {
+
+		}
+
+		.sponsor-level-title {
+			display: block;
+			margin: 1em 0 0.5em 0;
+			padding: 0.5em 0;
+			@include rem(font-size, 1.8);
+			font-weight: 600;
+			font-family: $header-font;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			border-bottom: 1px solid darken($light-gray, 3);
+
+			// Heading icon
+			@include iconify('\f091'); // trophy icon
+			&:before {
+				margin-right: 0.3em;
+			}
+		}
+
+		.sponsor-logo {
+			display: block;
+
+			img {
+				background: $white;
+				width: 100%;
+				max-width: 100%;
+				height: auto;
+				border: 1px solid darken($light-gray, 3);
+				margin: 0.5em 0;
+				padding: 5px; // to help some of these logos not look like shit
+
+				&:first-of-type {
+					margin-top: 0;
+				}
+
+				&:last-of-type {
+					margin-bottom: 0;
+				}
+			}
+		}
+
+		// Sponsor levels
+		.pillar {
+
+			.sponsor-level-title { color: $gold; }
+		}
+
+		.champion {
+
+			.sponsor-level-title { color: $orange; }
+		}
+
+		.accomplice {
+
+			.sponsor-level-title { color: $blue; }
+		}
+
+	}
+}

@@ -1,0 +1,126 @@
+//
+// Utilities
+//
+
+@mixin smoothtext {
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased !important;
+	   -moz-font-smoothing: antialiased !important;
+			font-smoothing: antialiased !important;
+}
+
+@mixin cleanlist {
+	&, li {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+}
+
+@mixin inlinelist {
+	overflow: hidden;
+	display: block;
+	@include cleanlist;
+
+	li {
+		display: inline-block;
+	}
+}
+
+@mixin rem($property, $rems) {
+	#{$property}: #{$rems * 10}px;
+	#{$property}: #{$rems}rem;
+}
+
+/**
+ * Iconify
+ * This will preceed your element with a Font Awesome
+ * icon via the :before pseudo element. Reference the
+ * Font Awesome website for your desired icon's
+ * unicode.
+ * Reference: http://fontawesome.io/icon/trophy/
+ *
+ * @example
+ * .element {
+ * 		@include iconify('\f091'); // trophy icon
+ * }
+ */
+
+@mixin iconify( $unicode ) {
+	&:before {
+		content: $unicode;
+		display: inline-block;
+		font-family: 'FontAwesome';
+		font-size: inherit;
+		font-weight: normal;
+		color: inherit;
+		vertical-align: middle;
+	}
+}
+
+@mixin box-shadow( $style ) {
+	-webkit-box-shadow: #{$style};
+	   -moz-box-shadow: #{$style};
+	    -ms-box-shadow: #{$style};
+	     -o-box-shadow: #{$style};
+	        box-shadow: #{$style};
+}
+
+/**
+ * Credits: Tim Knight - https://github.com/timknight
+ *
+ * Media Query Breakpoint
+ * The breakpoint mixin uses the same attribute names as Bootstrap's responsive classes
+ * to make using the feature as easy to remember as possible. Passing in a responsive class
+ * will add a media query and output the passed in block.
+ *
+ * @param {Map} $map - A map variable that contains an min and max key value pair.
+ *
+ * @example
+ * .foo { @include breakpoint($sm) {...}}
+ *
+ */
+@mixin breakpoint($map) {
+	$query: "";
+	@if map-has-key($map, min) { $query: append($query, "(min-width: #{map-get($map, min)})") }
+	@if map-has-key($map, min) and map-has-key($map, max) { $query: append($query, "and") }
+	@if map-has-key($map, max) { $query: append($query, "(max-width: #{map-get($map, max)})") }
+	@media #{$query} { @content; }
+}
+
+/**
+ * Credits: Tim Knight - https://github.com/timknight
+ *
+ * Palette Function
+ * Allows you to make a color palette and then
+ * access various shades much easier than traditional
+ * methods.
+ */
+@function palette( $palette, $shade, 'base' ) {
+	@return map-get( map-get( $color-palettes, $palette ), $shade );
+}
+
+//
+// Project-specific
+//
+
+@mixin postmeta {
+	@include rem(font-size, 1.5);
+	font-weight: 600;
+	// text-transform: uppercase;
+	color: lighten($gray, 20);
+
+	a {
+		color: $blue;
+
+		&:hover {
+			color: darken($blue, 15);
+		}
+	}
+}
+
+@mixin avatar {
+	display: block;
+	border: 6px solid $light-gray;
+	@include transition(0.2s border ease-in-out);
+}

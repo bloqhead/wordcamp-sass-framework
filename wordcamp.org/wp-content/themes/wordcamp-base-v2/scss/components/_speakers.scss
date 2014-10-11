@@ -1,0 +1,59 @@
+.speaker-gravatar-list {
+	overflow: hidden;
+
+	a {
+		text-decoration: none;
+		float: left;
+		margin: 0 5px 5px 0;
+
+		&:last-of-type {
+			margin-right: 0;
+		}
+
+		.avatar {
+			@include avatar;
+			display: inline-block !important;
+		}
+
+		&:hover .avatar {
+			border-color: $gold;
+		}
+	}
+}
+
+.speaker {
+	margin: 20px 0;
+	padding: 20px 0;
+	overflow: hidden;
+	border-bottom: 1px solid $light-gray;
+
+	&:first-of-type {
+		margin-top: 0;
+	}
+
+	&:last-of-type {
+		margin-bottom: 0;
+	}
+
+	.avatar {
+		@include avatar;
+		float: left;
+		margin: 0 20px 20px 0;
+	}
+
+	.speaker-bio {
+
+	}
+
+	.speaker-name {
+
+	}
+
+	@media screen and (max-width: 767px) {
+		.avatar {
+			float: none;
+			display: block;
+			margin: 0 auto 20px auto;
+		}
+	}
+}

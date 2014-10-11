@@ -1,0 +1,344 @@
+// =========================
+// Requirements
+// =========================
+
+// Bourbon + Neat
+@import 'bourbon/bourbon';
+@import 'neat/neat';
+
+// Variables, Helpers, Settings
+@import 'variables';
+@import 'helpers';
+
+// =========================
+// Custom CSS
+// Start editing below (or in
+// components!)
+// =========================
+
+//
+// Main Structure
+//
+
+body {
+	background: $dark-gray;
+	font-family: $body-font;
+	color: $white;
+	@include smoothtext;
+}
+
+body, #page {
+	@include rem(font-size, $base-font-size);
+
+	@media screen and (max-width: 1023px) {
+		@include rem(font-size, $base-font-size-alt);
+	}
+}
+
+#masthead {
+	background: $blue url(/files/2014/08/banner.jpg) no-repeat 45% 0 fixed;
+	// background-size: 100% auto;
+	background-size: cover;
+	padding: 5em 0 1.5em 0;
+	margin: 0 0 3em 0;
+	border-bottom: 20px solid $light-blue;
+
+	body.home & {
+		padding: 6em 0 3em 0;
+	}
+
+	.site-branding,
+	.main-navigation {
+		float: none;
+	}
+
+	.site-branding, hgroup {
+		@include outer-container;
+		color: $white;
+		text-align: center;
+
+		.site-title {
+			display: block;
+			background: url(/files/2014/08/logo.png) no-repeat center;
+			background-size: auto 100%;
+			// width: 600px;
+			height: 150px;
+			font: 0/0 a;
+			margin: 0 auto;
+
+			@media screen and (max-width: 1023px) {
+				height: 100px;
+			}
+
+			body.home & {
+				height: 300px;
+
+				@media screen and (max-width: 1023px) {
+					height: 150px;
+				}
+			}
+
+			a {
+				color: $white;
+				text-decoration: none;
+			}
+		}
+
+		.site-description {
+			@include rem(font-size, 1.6);
+			text-transform: uppercase;
+			letter-spacing: 2px;
+
+			body.home & {
+				@include rem(font-size, 2.0);
+			}
+		}
+	}
+}
+
+#main {
+	@include outer-container;
+}
+
+#page {
+	background: $white;
+	margin: 0 auto;
+	color: $dark-gray;
+	position: relative;
+
+	@media screen and (max-width: 767px) {
+		@include rem(font-size, 1.8);
+	}
+}
+
+#content {
+	max-width: $max-width;
+	margin: 0 auto;
+
+	@media screen and (max-width: 1262px) {
+		padding-right: 2em;
+		padding-left: 2em;
+	}
+}
+
+#primary {
+
+	@media screen and (min-width: 767px) {
+		@include span-columns(8);
+	}
+}
+
+#secondary {
+
+	.widget {
+		background: lighten($light-gray, 2.5);
+		@include rem(font-size, 1.6);
+		padding: 1.2em;
+
+		ul {
+			@include cleanlist;
+		}
+
+		.widget-title {
+			font-family: $header-font;
+			font-weight: 200;
+			@include rem(font-size, 1.6);
+			color: $blue;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			margin: 0 0 0.5em 0;
+			padding: 0 0 0.5em 0;
+			border-bottom: 1px solid darken($light-gray, 3);
+
+			&:first-of-type {
+				margin-top: 0;
+			}
+		}
+	}
+
+	@media screen and (min-width: 767px) {
+		@include span-columns(4);
+	}
+}
+
+#colophon {
+	background: $dark-gray;
+	padding: 4em 2em;
+	margin-top: 2em;
+	@include rem(font-size, 1.4);
+	text-transform: uppercase;
+	text-align: center;
+	letter-spacing: 1px;
+	color: $white;
+	overflow: hidden;
+
+	a {
+		text-decoration: none;
+	}
+
+	a:link, a:visited {
+		color: $gold;
+	}
+
+	a:hover, a:active {
+		color: $white;
+	}
+}
+
+//
+// Typography
+//
+
+a {
+	@include transition(0.2s color ease-in-out);
+}
+
+a:link, a:visited {
+	color: $red;
+}
+
+a:hover, a:active {
+	color: $gold;
+}
+
+table {
+	width: 100%;
+	border: 1px solid $light-gray;
+	border-collapse: collapse;
+
+	tr {
+
+	}
+
+	th, td {
+		border: 1px solid $light-gray;
+		padding: 0.5em;
+		vertical-align: text-top !important;
+	}
+
+	th {
+		@include rem(font-size, $base-font-size-alt);
+		font-weight: 600;
+		font-family: $serif;
+		color: $orange;
+	}
+
+	td {
+
+	}
+}
+
+#primary {
+
+	h1, h2, h3, h4, h5, h6 {
+		font-family: $header-font;
+		font-weight: 700;
+
+		a {
+			text-decoration: none;
+		}
+	}
+
+	h1, h2, h3 {
+		color: $red;
+	}
+
+	h1 {
+		@include rem(font-size, 4.0);
+	}
+
+	h2 {
+		@include rem(font-size, 3.0);
+	}
+
+	h3 {
+		@include rem(font-size, 2.8);
+	}
+
+	h4 {
+		@include rem(font-size, 2.4);
+		color: $blue;
+	}
+
+	h5 {
+		@include rem(font-size, 2.2);
+		color: $blue;
+	}
+
+	h6 {
+		@include rem(font-size, 2.0);
+		color: $dark-gray;
+	}
+}
+
+//
+// Posts
+//
+
+.hentry {
+	margin-bottom: 3em;
+}
+
+.entry-header {
+	position: relative;
+	padding-bottom: 1em;
+
+	&:before {
+		position: absolute;
+		top: 0;
+		left: -5000px;
+		right: 0;
+		bottom: 0;
+		z-index: 0;
+		content: "";
+		border-bottom: 2px solid $light-blue;
+	}
+
+	.entry-title, .entry-meta {
+		position: relative;
+		z-index: 1;
+		display: block;
+	}
+
+	.entry-meta {
+		@include postmeta;
+	}
+}
+
+.entry-footer {
+	@include postmeta;
+	border-top: 1px solid $light-gray;
+	padding-top: 0.5em;
+	// text-align: right;
+
+	span {
+		margin-right: 0.5em;
+
+		&:last-of-type {
+			margin-right: 0;
+		}
+	}
+
+	.cat-links {
+
+	}
+
+	.comments-link {
+		@include iconify('\f086');
+	}
+
+	.edit-link {
+
+	}
+}
+
+body.single {
+
+	#content > img.wp-post-image {
+		display: block;
+		clear: both;
+		max-width: 100%;
+		height: auto;
+		margin-bottom: 1em;
+	}
+}
