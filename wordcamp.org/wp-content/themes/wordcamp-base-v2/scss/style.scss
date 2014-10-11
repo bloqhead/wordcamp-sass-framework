@@ -8,7 +8,7 @@
 
 // Variables, Helpers, Settings
 @import 'variables';
-@import 'helpers';
+@import 'mixins';
 
 // =========================
 // Custom CSS
@@ -27,7 +27,8 @@ body {
 	@include smoothtext;
 }
 
-body, #page {
+body,
+#page {
 	@include rem(font-size, $base-font-size);
 
 	@media screen and (max-width: 1023px) {
@@ -193,11 +194,13 @@ a {
 	@include transition(0.2s color ease-in-out);
 }
 
-a:link, a:visited {
+a:link,
+a:visited {
 	color: $red;
 }
 
-a:hover, a:active {
+a:hover,
+a:active {
 	color: $gold;
 }
 
