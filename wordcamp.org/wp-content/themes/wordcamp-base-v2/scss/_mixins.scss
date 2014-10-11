@@ -95,6 +95,10 @@
  * Allows you to make a color palette and then
  * access various shades much easier than traditional
  * methods.
+ *
+ * @example
+ * .element { color: palette(gray); }
+ * .element { color: palette(gray, light); }
  */
 @function palette( $palette, $shade, 'base' ) {
 	@return map-get( map-get( $color-palettes, $palette ), $shade );

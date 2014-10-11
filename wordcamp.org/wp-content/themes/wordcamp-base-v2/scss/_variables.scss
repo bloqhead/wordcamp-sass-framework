@@ -14,42 +14,53 @@ $body-font: 			$sans-serif;
 $header-font: 			$serif;
 
 // Paths
+// Makes life easier
+// @example
+// .element { background: url(#{$i}/thing.png); }
 $i: 					'img';
 
 // Colors
+// Replace these with your own!
 $ui-color-1: #0b0b0b; // gray
-$ui-color-2: #000;
+$ui-color-2: #000; // black
 $ui-color-3: #067fc3; // blue
 $ui-color-4: #be3c3a; // red
+$ui-color-5: #d0bb49; // gold
+$ui-color-6: #bc360a; // orange
 
 // Color palette
-// @examples
-// .element { palette(gray); }
-// .element { palette(gray, light); }
-// .element { palette(gray, dark); }
+// See: palette function in _mixins.scss
+// Ass you add or change colors in your palette,
+// map them below.
 $color-palettes: (
 	gray: (
-		light 	: lighten($gray, 15%),
-		base 	: $gray,
-		dark 	: darken($gray, 10%)
+		light 	: lighten($ui-color-1, 15%),
+		base 	: $ui-color-1,
+		dark 	: darken($ui-color-1, 10%)
 	),
 	black: (
-		light 	: lighten($black, 15%),
-		base 	: $black
+		light 	: lighten($ui-color-2, 15%),
+		base 	: $ui-color-2
 	),
 	blue: (
-		light 	: lighten($blue, 15%),
-		base 	: $blue,
-		dark 	: darken($blue, 10%)
+		light 	: lighten($ui-color-3, 15%),
+		base 	: $ui-color-3,
+		dark 	: darken($ui-color-3, 10%)
 	),
 	red: (
-		light 	: lighten($blue, 15%),
-		base 	: $blue,
-		dark 	: darken($blue, 10%)
+		light 	: lighten($ui-color-4, 15%),
+		base 	: $ui-color-4,
+		dark 	: darken($ui-color-4, 10%)
+	),
+	gold: (
+		light 	: lighten($ui-color-5, 15%),
+		base 	: $ui-color-5,
+		dark 	: darken($ui-color-5, 10%)
 	)
 );
 
 // Breakpoints
+// See: breakpoint mixin in _mixins.scss
 $xs: ( max: 767px );
 $sm: ( min: 768px );
 $md: ( min: 992px );

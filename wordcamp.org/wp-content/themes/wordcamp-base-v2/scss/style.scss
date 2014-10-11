@@ -178,7 +178,7 @@ body,
 	}
 
 	a:link, a:visited {
-		color: $gold;
+		color: $ui-color-5;
 	}
 
 	a:hover, a:active {
@@ -196,12 +196,12 @@ a {
 
 a:link,
 a:visited {
-	color: $red;
+	color: $ui-color-4;
 }
 
 a:hover,
 a:active {
-	color: $gold;
+	color: $ui-color-5;
 }
 
 table {
@@ -243,7 +243,7 @@ table {
 	}
 
 	h1, h2, h3 {
-		color: $red;
+		color: $ui-color-4;
 	}
 
 	h1 {

@@ -8,7 +8,7 @@
 		right: 0;
 		left: 0;
 		z-index: 10;
-		background: $red;
+		background: $ui-color-4;
 
 		> [class^="menu-"] {
 			@include outer-container;
@@ -44,7 +44,7 @@
 					}
 
 					&.current_page_item a {
-						background: darken($red, 5);
+						background: darken($ui-color-4, 5);
 						position: relative;
 						color: $white;
 
@@ -53,7 +53,7 @@
 							bottom: 0;
 							right: 0;
 							left: 0;
-							background: darken($red, 15);
+							background: darken($ui-color-4, 15);
 							height: 6px;
 							content: "";
 						}
@@ -63,7 +63,7 @@
 				a {
 					display: block;
 					position: relative;
-					color: $gold;
+					color: $ui-color-5;
 					font-weight: 600;
 					text-decoration: none;
 					@include rem(padding, 2.0);
@@ -74,14 +74,14 @@
 						bottom: 0;
 						right: 0;
 						left: 0;
-						background: lighten($red, 10);
+						background: lighten($ui-color-4, 10);
 						height: 0;
 						content: "";
 						@include transition(0.2s all ease-in-out);
 					}
 
 					&:hover {
-						background: darken($red, 5);
+						background: darken($ui-color-4, 5);
 						color: $white;
 
 						&:after {
@@ -154,7 +154,7 @@
 		content: "\f0c9" !important;
 		@include rem(font-size, 3.2);
 		font-family: 'FontAwesome' !important;
-		color: lighten($red, 25);
+		color: lighten($ui-color-4, 25);
 		padding: 0.25em 0.8em;
 		margin: 0 auto;
 	}
