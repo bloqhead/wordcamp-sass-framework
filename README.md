@@ -16,4 +16,4 @@ If you want to see the end product in action, checkout the [WordCamp Tampa 2014]
 * Some rad mixins/functions from [Tim Knight](https://github.com/timknight)
 
 ## License
-GNU GENERAL PUBLIC LICENSE Version 2 - [View license](license.txt)
+GNU GENERAL PUBLIC LICENSE Version 2 - [View license](wordcamp.org/wp-content/themes/wordcamp-base-v2/license.txt)
