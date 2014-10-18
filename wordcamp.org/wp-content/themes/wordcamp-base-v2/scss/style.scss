@@ -21,7 +21,7 @@
 //
 
 body {
-	background: $dark-gray;
+	background: palette(color1, dark);
 	font-family: $body-font;
 	color: palette(color7);
 	@include smoothtext;
@@ -31,7 +31,7 @@ body,
 #page {
 	@include rem(font-size, $base-font-size);
 
-	@media screen and (max-width: 1023px) {
+	@include breakpoint($xs) {
 		@include rem(font-size, $base-font-size-alt);
 	}
 }
@@ -41,7 +41,7 @@ body,
 	background-size: cover;
 	padding: 5em 0 1.5em 0;
 	margin: 0 0 3em 0;
-	border-bottom: 20px solid $light-blue;
+	border-bottom: 20px solid palette(color3, light);
 
 	body.home & {
 		padding: 6em 0 3em 0;
