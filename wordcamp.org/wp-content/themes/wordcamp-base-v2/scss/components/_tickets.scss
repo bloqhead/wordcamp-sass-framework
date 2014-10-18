@@ -3,11 +3,11 @@
 	.tix_tickets_table {
 
 		&, th {
-			@media screen and (max-width: 1023px) {
+			@include breakpoint($md) {
 				font-size: 13px !important;
 			}
 
-			@media screen and (max-width: 767px) {
+			@include breakpoint($xs) {
 				font-size: 12px !important;
 			}
 		}

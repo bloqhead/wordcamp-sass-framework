@@ -6,6 +6,9 @@
 $max-width: 		1140px;
 
 // Fonts / Font sizes
+// You can call fonts in with Google
+// Fonts or your own fonts located
+// within the theme.
 $base-font-size: 		2.0; // 20px - these are calculated through a REM mixin
 $base-font-size-alt: 	1.6; // 16px
 $sans-serif: 			'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -30,37 +33,48 @@ $ui-color-6: #bc360a; // orange
 
 // Color palette
 // See: palette function in _mixins.scss
-// Ass you add or change colors in your palette,
-// map them below.
+// As you add or change colors in your palette,
+// map them below accordingly.
+// Use these with Tim Knight's palette mixin
+// located in the _mixins.scss file.
 $color-palettes: (
-	gray: (
+	color1: (
 		light 	: lighten($ui-color-1, 15%),
 		base 	: $ui-color-1,
 		dark 	: darken($ui-color-1, 10%)
 	),
-	black: (
+	color2: (
 		light 	: lighten($ui-color-2, 15%),
 		base 	: $ui-color-2
 	),
-	blue: (
+	color3: (
 		light 	: lighten($ui-color-3, 15%),
 		base 	: $ui-color-3,
 		dark 	: darken($ui-color-3, 10%)
 	),
-	red: (
+	color4: (
 		light 	: lighten($ui-color-4, 15%),
 		base 	: $ui-color-4,
 		dark 	: darken($ui-color-4, 10%)
 	),
-	gold: (
+	color5: (
 		light 	: lighten($ui-color-5, 15%),
 		base 	: $ui-color-5,
 		dark 	: darken($ui-color-5, 10%)
+	),
+	color6: (
+		light 	: lighten($ui-color-6, 15%),
+		base 	: $ui-color-6,
+		dark 	: darken($ui-color-6, 10%)
+	),
+	color7: (
+		base 	: #fff
 	)
 );
 
 // Breakpoints
 // See: breakpoint mixin in _mixins.scss
+$xx: ( max: 639px );
 $xs: ( max: 767px );
 $sm: ( min: 768px );
 $md: ( min: 992px );

@@ -8,7 +8,7 @@
 		right: 0;
 		left: 0;
 		z-index: 10;
-		background: $ui-color-4;
+		background: palette(color4);
 
 		> [class^="menu-"] {
 			@include outer-container;
@@ -27,7 +27,7 @@
 					float: none;
 					margin-left: -4px;
 
-					@media screen and (max-width: 767px) {
+					@include breakpoint($xs) {
 						text-align: left;
 						display: block;
 
@@ -44,18 +44,18 @@
 					}
 
 					&.current_page_item a {
-						background: darken($ui-color-4, 5);
+						background: palette(color4, dark);
 						position: relative;
-						color: $white;
+						color: palette(color7);
 
 						&:after {
 							position: absolute;
 							bottom: 0;
 							right: 0;
 							left: 0;
-							background: darken($ui-color-4, 15);
+							background: palette(color4, dark);
 							height: 6px;
-							content: "";
+							content: " ";
 						}
 					}
 				}
@@ -63,7 +63,7 @@
 				a {
 					display: block;
 					position: relative;
-					color: $ui-color-5;
+					color: palette(color5);
 					font-weight: 600;
 					text-decoration: none;
 					@include rem(padding, 2.0);
@@ -74,15 +74,15 @@
 						bottom: 0;
 						right: 0;
 						left: 0;
-						background: lighten($ui-color-4, 10);
+						background: palette(color4, light);
 						height: 0;
-						content: "";
+						content: " ";
 						@include transition(0.2s all ease-in-out);
 					}
 
 					&:hover {
-						background: darken($ui-color-4, 5);
-						color: $white;
+						background: palette(color4, dark);
+						color: palette(color7);
 
 						&:after {
 							height: 6px;
@@ -91,7 +91,7 @@
 				}
 
 				.sub-menu {
-					background: $dark-gray !important;
+					background: palette(color1, dark) !important;
 					top: 100%;
 					@include cleanlist;
 
@@ -100,8 +100,8 @@
 					}
 
 					a {
-						background: $dark-gray !important;
-						color: $white;
+						background: palette(color1, dark) !important;
+						color: palette(color7);
 						@include rem(padding, 1.5);
 
 						&:after {
@@ -109,7 +109,7 @@
 						}
 
 						&:hover {
-							background: lighten($dark-gray, 5);
+							background: palette(color1, dark);
 						}
 					}
 				}
@@ -123,11 +123,11 @@
 	}
 
 	.main-navigation [class*="menu-container"] .menu {
-		@media screen and (max-width: 767px) {
+		@include breakpoint($xs) {
 			display: none;
 		}
 
-		@media screen and (max-width: 1023px) {
+		@include breakpoint($md) {
 			@include rem(font-size, 1.4);
 		}
 	}
@@ -148,22 +148,20 @@
 	margin: 0;
 	outline: none;
 	@include box-shadow(none);
+	@include iconify('\f0c9');
 
 	&:before {
-		display: block;
-		content: "\f0c9" !important;
-		@include rem(font-size, 3.2);
-		font-family: 'FontAwesome' !important;
-		color: lighten($ui-color-4, 25);
+		color: palette(color4, light);
 		padding: 0.25em 0.8em;
 		margin: 0 auto;
+		@include rem(font-size, 3.2);
 	}
 
 	&:after {
 		display: none !important;
 	}
 
-	@media screen and (max-width: 1023px) {
+	@include breakpoint($md) {
 		display: block !important;
 		visibility: visible !important;
 	}

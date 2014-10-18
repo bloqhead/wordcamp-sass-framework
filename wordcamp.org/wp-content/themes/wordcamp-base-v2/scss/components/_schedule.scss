@@ -14,14 +14,14 @@
 	}
 
 	.wcpt-session-speakers {
-		background: $light-gray;
+		background: palette(color1, light);
 		display: block;
 		margin-top: 0.5em;
 		padding: 0.3em;
 		font-size: 0.8em;
 
 		&, a {
-			color: $blue;
+			color: palette(color3);
 		}
 
 		a {

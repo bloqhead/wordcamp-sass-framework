@@ -1,3 +1,4 @@
+// #secondary = sidebar
 #secondary {
 
 	.wcb_widget_sponsors {
@@ -16,10 +17,11 @@
 			font-family: $header-font;
 			text-transform: uppercase;
 			letter-spacing: 1px;
-			border-bottom: 1px solid darken($light-gray, 3);
+			border-bottom: 1px solid palette(color1, light);
 
 			// Heading icon
-			@include iconify('\f091'); // trophy icon
+			@include iconify('\f091');
+
 			&:before {
 				margin-right: 0.3em;
 			}
@@ -29,13 +31,13 @@
 			display: block;
 
 			img {
-				background: $white;
+				background: palette(color7);
 				width: 100%;
 				max-width: 100%;
 				height: auto;
-				border: 1px solid darken($light-gray, 3);
+				border: 1px solid palette(color1, dark);
 				margin: 0.5em 0;
-				padding: 5px; // to help some of these logos not look like shit
+				padding: 5px;
 
 				&:first-of-type {
 					margin-top: 0;
@@ -48,16 +50,16 @@
 		}
 
 		// Sponsor levels
-		.pillar {
-			.sponsor-level-title { color: $ui-color-5; }
+		.pillar .sponsor-level-title {
+			color: palette(color5);
 		}
 
-		.champion {
-			.sponsor-level-title { color: $ui-color-6; }
+		.champion .sponsor-level-title {
+			color: palette(color6);
 		}
 
-		.accomplice {
-			.sponsor-level-title { color: $ui-color-3; }
+		.accomplice .sponsor-level-title {
+			color: palette(color3);
 		}
 
 	}

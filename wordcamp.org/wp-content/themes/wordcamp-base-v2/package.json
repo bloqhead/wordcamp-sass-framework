@@ -1,8 +1,8 @@
 {
 	"name": "wordcamp_tampa_2014",
-	"version": "0.0.0",
-	"description": "WordCamp Tampa 2014 theme based on WordCamp Redux which is based on _s (http://underscores.me)",
-	"author": "Daryn St. Pierre, Big Sea Design",
+	"version": "1.1.0",
+	"description": "WordCamp Tampa 2014 Sass Framework",
+	"author": "Daryn St. Pierre",
 	"devDependencies": {
 		"grunt": "~0.4.1",
 		"grunt-contrib-watch": "~0.5.2",

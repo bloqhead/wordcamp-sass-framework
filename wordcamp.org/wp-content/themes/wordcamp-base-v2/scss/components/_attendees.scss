@@ -9,7 +9,7 @@
 
 		.tix-attendee-name {
 			font-weight: bold;
-			color: $ui-color-4;
+			color: palette(color4);
 		}
 	}
 
@@ -21,7 +21,7 @@
 		overflow: hidden;
 	}
 
-	@media screen and (max-width: 767px) {
+	@include breakpoint($xs) {
 		 .tix-columns-3 li {
 		 	@include span-columns(6);
 
@@ -36,7 +36,7 @@
 		}
 	}
 
-	@media screen and (max-width: 639px) {
+	@include breakpoint($xx) {
 		.tix-columns-3 li {
 			width: 100% !important;
 			height: auto !important;
@@ -45,7 +45,7 @@
 			margin-bottom: 10px;
 			padding-top: 10px;
 			padding-bottom: 10px;
-			border-bottom: 1px solid $light-gray;
+			border-bottom: 1px solid palette(color1, light);
 			@include box-sizing(border-box);
 
 			.tix-field {

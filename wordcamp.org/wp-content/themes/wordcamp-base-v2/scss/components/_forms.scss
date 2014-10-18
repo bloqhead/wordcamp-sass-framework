@@ -11,12 +11,12 @@
 	input[type="submit"],
 	input[type="reset"],
 	button {
-		background: $ui-color-4 !important;
+		background: palette(color4) !important;
 		border: none !important;
-		border-bottom: 6px solid darken($ui-color-4, 15) !important;
+		border-bottom: 6px solid palette(color4, dark) !important;
 		border-radius: 0;
 		padding: 1em 1.2em 0.8em 1.2em;
-		color: $white;
+		color: palette(color7);
 		font-weight: normal;
 		text-transform: uppercase;
 		letter-spacing: 1px;
@@ -25,13 +25,14 @@
 		@include rem(font-size, 1.6);
 		@include transition(0.1s all ease-in-out);
 
-		&, &:hover {
+		&,
+		&:hover {
 			text-shadow: none;
 		}
 
 		&:hover {
-			background: lighten($ui-color-4, 5) !important;
-			color: $white;
+			background: palette(color4, light) !important;
+			color: palette(color7);
 		}
 	}
 }
