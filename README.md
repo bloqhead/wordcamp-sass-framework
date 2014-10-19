@@ -1,4 +1,4 @@
-![WordCamp Tampa Banner](github-banner.png)
+![WordCamp Tampa Banner](github-header.png)
 
 # WordCamp Sass Framework
 This is a theme framework based on [Andrew Nacin's](https://github.com/nacin) base theme v2, which is based on [Underscores](underscores.me). It is meant to be barebones and easy enough to make your own.
