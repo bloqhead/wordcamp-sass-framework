@@ -1,7 +1,7 @@
 # WordCamp Sass Framework
 ![WordCamp Tampa Banner](github-header.png)
 
-## This is a theme framework based on [Andrew Nacin's](https://github.com/nacin) base theme v2, which is based on [Underscores](underscores.me). It is meant to be barebones and easy enough to make your own. The custom styles are based off of what I created for [the website](http://2014.tampa.wordcamp.org/) for Tampa's first WordCamp.
+#### This is a theme framework based on [Andrew Nacin's](https://github.com/nacin) base theme v2, which is based on [Underscores](underscores.me). It is meant to be barebones and easy enough to make your own. The custom styles are based off of what I created for [the website](http://2014.tampa.wordcamp.org/) for Tampa's first WordCamp.
 
 ### The General Goal
 This theme will provide future [WordCamp](http://central.wordcamp.org/) organizers with a theme that can easily be banged out for their needs. It includes SCSS files that are geared towards WordCamp-specific things, such as attendees, tickets, sponsors, etc.
