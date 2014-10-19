@@ -32,6 +32,10 @@
 	#{$property}: #{$rems}rem;
 }
 
+@mixin notext {
+	font: 0/0 a;
+}
+
 //
 // Iconify
 //

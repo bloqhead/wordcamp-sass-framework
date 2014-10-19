@@ -4,6 +4,7 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
+/* Attendees */
 #tix-attendees .tix-attendee-list {
   *zoom: 1;
   max-width: 1140px;
@@ -58,6 +59,7 @@
     #tix-attendees .tix-columns-3 li .tix-field {
       font-size: 1.2em !important; } }
 
+/* Comments */
 ol.comment-list {
   list-style: none;
   margin: 2em 0;
@@ -107,6 +109,7 @@ ol.comment-list {
     border-left: 5px solid #067fc3;
     margin: 0 0 0.25em 0.25em; }
 
+/* Forms */
 #content input[type="submit"],
 #content input[type="reset"],
 #content button {
@@ -138,6 +141,7 @@ ol.comment-list {
     background: #d47271 !important;
     color: #fff; }
 
+/* Navigation */
 #masthead .main-navigation,
 #masthead .main-small-navigation {
   position: fixed;
@@ -342,6 +346,7 @@ ol.comment-list {
       display: block !important;
       visibility: visible !important; } }
 
+/* Organizers */
 .wcorg-organizers {
   overflow: hidden; }
   .wcorg-organizers .wcorg-organizer {
@@ -369,6 +374,7 @@ ol.comment-list {
       width: 80px !important;
       height: 80px !important; } }
 
+/* Schedule */
 .wcpt-schedule a {
   text-decoration: none; }
 .wcpt-schedule .wcpt-session-title {
@@ -385,6 +391,7 @@ ol.comment-list {
   .wcpt-schedule .wcpt-session-speakers a:before {
     margin-right: 0.3em; }
 
+/* Speakers */
 .speaker-gravatar-list {
   overflow: hidden; }
   .speaker-gravatar-list a {
@@ -426,6 +433,7 @@ ol.comment-list {
       display: block;
       margin: 0 auto 20px auto; } }
 
+/* Sponsors (sidebar) */
 #secondary .wcb_widget_sponsors .sponsor-level-title {
   display: block;
   margin: 1em 0 0.5em 0;
@@ -468,6 +476,7 @@ ol.comment-list {
 #secondary .wcb_widget_sponsors .accomplice .sponsor-level-title {
   color: #067fc3; }
 
+/* Tickets */
 @media (min-width: 992px) {
   #tix .tix_tickets_table, #tix .tix_tickets_table th {
     font-size: 13px !important; } }
@@ -475,6 +484,7 @@ ol.comment-list {
   #tix .tix_tickets_table, #tix .tix_tickets_table th {
     font-size: 12px !important; } }
 
+/* Base Styles */
 body {
   background: black;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
