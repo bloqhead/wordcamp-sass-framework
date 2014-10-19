@@ -39,19 +39,14 @@
 //
 // Iconify
 //
-// This will preceed your element with a Font Awesome
+// @content This will preceed your element with a Font Awesome
 // icon via the :before pseudo element. Reference the
 // Font Awesome website for your desired icon's
-// unicode.
-// Reference: http://fontawesome.io/icon/trophy/
+// unicode. Reference: http://fontawesome.io/icon/trophy/
 //
 // @author Daryn St. Pierre
 // @access public
-//
-// @example
-// .element {
-// 		@include iconify('\f091'); // trophy icon
-// }
+// @example .element { @include iconify('\f091'); // trophy icon }
 //
 
 @mixin iconify( $unicode ) {
@@ -77,18 +72,14 @@
 //
 // Media Query Breakpoint
 //
-// The breakpoint mixin uses the same attribute names as Bootstrap's responsive classes
+// @content The breakpoint mixin uses the same attribute names as Bootstrap's responsive classes
 // to make using the feature as easy to remember as possible. Passing in a responsive class
 // will add a media query and output the passed in block.
 //
 // @author Tim Knight
 // @access public
-//
-// @param
-// {Map} $map - A map variable that contains an min and max key value pair.
-//
-// @example
-// .foo { @include breakpoint($sm) {...}}
+// @param {Map} $map - A map variable that contains an min and max key value pair.
+// @example .foo { @include breakpoint($sm) {...} }
 //
 
 @mixin breakpoint($map) {
@@ -102,16 +93,13 @@
 //
 // Palette Function
 //
-// Allows you to make a color palette and then
+// @content Allows you to make a color palette and then
 // access various shades much easier than traditional
 // methods.
 //
 // @author Tim Knight
 // @access public
-//
-// @example
-// .element { color: palette(gray); }
-// .element { color: palette(gray, light); }
+// @example .element { color: palette(gray, [light, dark, nothing]); }
 //
 
 @function palette( $palette, $shade: 'base' ) {
