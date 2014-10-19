@@ -39,6 +39,8 @@
 //
 // Iconify
 //
+// @author Daryn St. Pierre
+//
 // This will preceed your element with a Font Awesome
 // icon via the :before pseudo element. Reference the
 // Font Awesome website for your desired icon's
@@ -72,15 +74,16 @@
 }
 
 //
-// Credits: Tim Knight - https://github.com/timknight
-//
 // Media Query Breakpoint
+//
+// @author Tim Knight
 //
 // The breakpoint mixin uses the same attribute names as Bootstrap's responsive classes
 // to make using the feature as easy to remember as possible. Passing in a responsive class
 // will add a media query and output the passed in block.
 //
-// @param {Map} $map - A map variable that contains an min and max key value pair.
+// @param
+// {Map} $map - A map variable that contains an min and max key value pair.
 //
 // @example
 // .foo { @include breakpoint($sm) {...}}
@@ -95,9 +98,9 @@
 }
 
 //
-// Credits: Tim Knight - https://github.com/timknight
-//
 // Palette Function
+//
+// @author Tim Knight
 //
 // Allows you to make a color palette and then
 // access various shades much easier than traditional
