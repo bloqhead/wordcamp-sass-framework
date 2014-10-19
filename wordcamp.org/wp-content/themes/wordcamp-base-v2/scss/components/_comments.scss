@@ -65,7 +65,7 @@ ol.comment-list {
 
 	.comment-metadata {
 		@include rem(font-size, 1.4);
-		color: $gray;
+		color: palette(color1);
 		margin: 0.5em 0;
 		padding: 0 0 0.5em 0;
 		border-bottom: 2px solid palette(color3, light);

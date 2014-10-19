@@ -11,9 +11,20 @@
 @import 'mixins';
 
 // =========================
+// Components
+// =========================
+// These are the individual
+// sections of your WordCamp
+// website. Edit away!
+// =========================
+@import 'components/**/*';
+
+// =========================
 // Custom CSS
-// Start editing below (or in
-// components!)
+// =========================
+// Start editing below or in
+// components as mentioned
+// above!
 // =========================
 
 //
@@ -37,7 +48,7 @@ body,
 }
 
 #masthead {
-	background: $blue url(#{$i}/banner.jpg) no-repeat 45% 0 fixed;
+	background: palette(color3) url(#{$i}/banner.jpg) no-repeat 45% 0 fixed;
 	background-size: cover;
 	padding: 5em 0 1.5em 0;
 	margin: 0 0 3em 0;
@@ -130,7 +141,7 @@ body,
 #secondary {
 
 	.widget {
-		background: lighten($light-gray, 2.5);
+		background: palette(color1, light);
 		@include rem(font-size, 1.6);
 		padding: 1.2em;
 
@@ -142,12 +153,12 @@ body,
 			font-family: $header-font;
 			font-weight: 200;
 			@include rem(font-size, 1.6);
-			color: $blue;
+			color: palette(color3);
 			text-transform: uppercase;
 			letter-spacing: 1px;
 			margin: 0 0 0.5em 0;
 			padding: 0 0 0.5em 0;
-			border-bottom: 1px solid darken($light-gray, 3);
+			border-bottom: 1px solid palette(color1, dark);
 
 			&:first-of-type {
 				margin-top: 0;
@@ -312,7 +323,7 @@ table {
 
 .entry-footer {
 	@include postmeta;
-	border-top: 1px solid palette($color1, light);
+	border-top: 1px solid palette(color1, light);
 	padding-top: 0.5em;
 
 	span {

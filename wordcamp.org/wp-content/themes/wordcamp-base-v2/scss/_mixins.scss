@@ -32,19 +32,20 @@
 	#{$property}: #{$rems}rem;
 }
 
-/**
- * Iconify
- * This will preceed your element with a Font Awesome
- * icon via the :before pseudo element. Reference the
- * Font Awesome website for your desired icon's
- * unicode.
- * Reference: http://fontawesome.io/icon/trophy/
- *
- * @example
- * .element {
- * 		@include iconify('\f091'); // trophy icon
- * }
- */
+//
+// Iconify
+//
+// This will preceed your element with a Font Awesome
+// icon via the :before pseudo element. Reference the
+// Font Awesome website for your desired icon's
+// unicode.
+// Reference: http://fontawesome.io/icon/trophy/
+//
+// @example
+// .element {
+// 		@include iconify('\f091'); // trophy icon
+// }
+//
 
 @mixin iconify( $unicode ) {
 	&:before {
@@ -66,20 +67,21 @@
 	        box-shadow: #{$style};
 }
 
-/**
- * Credits: Tim Knight - https://github.com/timknight
- *
- * Media Query Breakpoint
- * The breakpoint mixin uses the same attribute names as Bootstrap's responsive classes
- * to make using the feature as easy to remember as possible. Passing in a responsive class
- * will add a media query and output the passed in block.
- *
- * @param {Map} $map - A map variable that contains an min and max key value pair.
- *
- * @example
- * .foo { @include breakpoint($sm) {...}}
- *
- */
+//
+// Credits: Tim Knight - https://github.com/timknight
+//
+// Media Query Breakpoint
+//
+// The breakpoint mixin uses the same attribute names as Bootstrap's responsive classes
+// to make using the feature as easy to remember as possible. Passing in a responsive class
+// will add a media query and output the passed in block.
+//
+// @param {Map} $map - A map variable that contains an min and max key value pair.
+//
+// @example
+// .foo { @include breakpoint($sm) {...}}
+//
+
 @mixin breakpoint($map) {
 	$query: "";
 	@if map-has-key($map, min) { $query: append($query, "(min-width: #{map-get($map, min)})") }
@@ -88,19 +90,21 @@
 	@media #{$query} { @content; }
 }
 
-/**
- * Credits: Tim Knight - https://github.com/timknight
- *
- * Palette Function
- * Allows you to make a color palette and then
- * access various shades much easier than traditional
- * methods.
- *
- * @example
- * .element { color: palette(gray); }
- * .element { color: palette(gray, light); }
- */
-@function palette( $palette, $shade, 'base' ) {
+//
+// Credits: Tim Knight - https://github.com/timknight
+//
+// Palette Function
+//
+// Allows you to make a color palette and then
+// access various shades much easier than traditional
+// methods.
+//
+// @example
+// .element { color: palette(gray); }
+// .element { color: palette(gray, light); }
+//
+
+@function palette( $palette, $shade: 'base' ) {
 	@return map-get( map-get( $color-palettes, $palette ), $shade );
 }
 
@@ -112,20 +116,19 @@
 @mixin postmeta {
 	@include rem(font-size, 1.5);
 	font-weight: 600;
-	// text-transform: uppercase;
-	color: lighten($gray, 20);
+	color: palette(color1, light);
 
 	a {
-		color: $blue;
+		color: palette(color3);
 
 		&:hover {
-			color: darken($blue, 15);
+			color: palette(color3, dark);
 		}
 	}
 }
 
 @mixin avatar {
 	display: block;
-	border: 6px solid $light-gray;
+	border: 6px solid palette(color1, light);
 	@include transition(0.2s border ease-in-out);
 }

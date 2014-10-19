@@ -10,6 +10,9 @@ module.exports = function(grunt) {
       '<%= pkg.homepage ? "* " + pkg.homepage + "\\n" : "" %>',
 	sass: {
 		dist : {
+      options : {
+        require : [ 'bourbon', 'neat', 'sass-globbing' ]
+      },
 			files : [ {
 				expand : true,
 				flatten : true,
