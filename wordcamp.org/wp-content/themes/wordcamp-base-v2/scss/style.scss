@@ -118,7 +118,7 @@ body,
 	color: palette(color1, dark);
 	position: relative;
 
-	@media screen and (max-width: 767px) {
+	@include breakpoint($xs) {
 		@include rem(font-size, 1.8);
 	}
 }

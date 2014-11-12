@@ -570,7 +570,7 @@ body,
   margin: 0 auto;
   color: black;
   position: relative; }
-  @media screen and (max-width: 767px) {
+  @media (max-width: 767px) {
     #page {
       font-size: 18px;
       font-size: 1.8rem; } }
