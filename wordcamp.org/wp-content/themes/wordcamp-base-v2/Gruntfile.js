@@ -9,16 +9,28 @@ module.exports = function(grunt) {
 		sass: {
 			dist : {
 				options : {
-				require : [ 'bourbon', 'neat', 'sass-globbing' ]
-			},
-			files : [{
-				expand : true,
-				flatten : true,
-				cwd : 'scss',
-				src : ['**/*.scss', '!**/_*.scss'],
-				dest : './',
-				ext : '.css'
-			}]
+					require : [
+						'bourbon',
+						'neat',
+						'sass-globbing'
+					]
+				},
+				files : [{
+					expand : true,
+					flatten : true,
+					cwd : 'scss',
+					src : ['**/*.scss', '!**/_*.scss'],
+					dest : './',
+					ext : '.css'
+				}]
+			}
+		},
+
+		cssmin : {
+			dist : {
+				files : {
+					'style.min.css' : [ 'style.css' ],
+				}
 			}
 		},
 
@@ -32,33 +44,12 @@ module.exports = function(grunt) {
 			}
 		},
 
-		cssmin : {
-			dist : {
-				files : {
-					'style.min.css' : [ 'style.css' ],
-				}
-			}
-		},
-
-		sassdoc : {
-			files : [{
-				src : [
-					'scss/**/*.scss',
-					'scss/**/_*.scss',
-					'!scss/bourbon',
-					'!scss/neat'
-				],
-				dest : 'docs'
-			}]
-		}
-
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
-	grunt.loadNpmTasks('grunt-sassdoc');
 
 	grunt.registerTask('default', [ 'sass' ]);
-	grunt.registerTask('build', [ 'default','cssmin','sassdoc' ]);
+	grunt.registerTask('build', [ 'default','cssmin' ]);
 };
