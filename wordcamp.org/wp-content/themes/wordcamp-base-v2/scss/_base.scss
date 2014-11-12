@@ -1,0 +1,331 @@
+//
+// Main Structure
+//
+
+/* Base Styles */
+
+body {
+	background: palette(color1, dark);
+	font-family: $body-font;
+	color: palette(color7);
+	@include smoothtext;
+}
+
+body, #page {
+	@include rem(font-size, $base-font-size);
+
+	@include breakpoint($xs) {
+		@include rem(font-size, $base-font-size-alt);
+	}
+}
+
+#masthead {
+	background: palette(color3) url(#{$i}/banner.jpg) no-repeat 45% 0 fixed;
+	background-size: cover;
+	padding: 5em 0 1.5em 0;
+	margin: 0 0 3em 0;
+	border-bottom: 20px solid palette(color3, light);
+
+	body.home & {
+		padding: 6em 0 3em 0;
+	}
+
+	.site-branding,
+	.main-navigation {
+		float: none;
+	}
+
+	.site-branding, hgroup {
+		@include outer-container;
+		color: palette(color7);
+		text-align: center;
+
+		.site-title {
+			display: block;
+			background: url(#{$i}/logo.png) no-repeat center;
+			background-size: auto 100%;
+			height: 150px;
+			@include notext;
+			margin: 0 auto;
+
+			@include breakpoint($md) {
+				height: 100px;
+			}
+
+			body.home & {
+				height: 300px;
+
+				@include breakpoint($md) {
+					height: 150px;
+				}
+			}
+
+			a {
+				color: palette(color7);
+				text-decoration: none;
+			}
+		}
+
+		.site-description {
+			@include rem(font-size, 1.6);
+			text-transform: uppercase;
+			letter-spacing: 2px;
+
+			body.home & {
+				@include rem(font-size, 2.0);
+			}
+		}
+	}
+}
+
+#main {
+	@include outer-container;
+}
+
+#page {
+	background: palette(color7);
+	margin: 0 auto;
+	color: palette(color1, dark);
+	position: relative;
+
+	@include breakpoint($xs) {
+		@include rem(font-size, 1.8);
+	}
+}
+
+#content {
+	max-width: $max-width;
+	margin: 0 auto;
+
+	@include breakpoint($lg) {
+		padding-right: 2em;
+		padding-left: 2em;
+	}
+}
+
+#primary {
+
+	@include breakpoint($xs) {
+		@include span-columns(8);
+	}
+}
+
+#secondary {
+
+	.widget {
+		background: palette(color1, light);
+		@include rem(font-size, 1.6);
+		padding: 1.2em;
+
+		ul {
+			@include cleanlist;
+		}
+
+		.widget-title {
+			font-family: $header-font;
+			font-weight: 200;
+			@include rem(font-size, 1.6);
+			color: palette(color3);
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			margin: 0 0 0.5em 0;
+			padding: 0 0 0.5em 0;
+			border-bottom: 1px solid palette(color1, dark);
+
+			&:first-of-type {
+				margin-top: 0;
+			}
+		}
+	}
+
+	@include breakpoint($xs) {
+		@include span-columns(4);
+	}
+}
+
+#colophon {
+	background: palette(color1, dark);
+	padding: 4em 2em;
+	margin-top: 2em;
+	@include rem(font-size, 1.4);
+	text-transform: uppercase;
+	text-align: center;
+	letter-spacing: 1px;
+	color: palette(color7);
+	overflow: hidden;
+
+	a {
+		text-decoration: none;
+	}
+
+	a:link,
+	a:visited {
+		color: palette(color5);
+	}
+
+	a:hover,
+	a:active {
+		color: palette(color7);
+	}
+}
+
+//
+// Typography
+//
+
+a {
+	@include transition(0.2s color ease-in-out);
+}
+
+a:link,
+a:visited {
+	color: palette(color4);
+}
+
+a:hover,
+a:active {
+	color: palette(color5);
+}
+
+table {
+	width: 100%;
+	border: 1px solid palette(color1, light);
+	border-collapse: collapse;
+
+	tr {
+
+	}
+
+	th,
+	td {
+		border: 1px solid palette(color1, light);
+		padding: 0.5em;
+		vertical-align: text-top !important;
+	}
+
+	th {
+		@include rem(font-size, $base-font-size-alt);
+		font-weight: 600;
+		font-family: $serif;
+		color: palette(color6);
+	}
+
+	td {
+
+	}
+}
+
+#primary {
+
+	h1, h2, h3, h4, h5, h6 {
+		font-family: $header-font;
+		font-weight: 700;
+
+		a {
+			text-decoration: none;
+		}
+	}
+
+	h1, h2, h3 {
+		color: $ui-color-4;
+	}
+
+	h1 {
+		@include rem(font-size, 4.0);
+	}
+
+	h2 {
+		@include rem(font-size, 3.0);
+	}
+
+	h3 {
+		@include rem(font-size, 2.8);
+	}
+
+	h4 {
+		@include rem(font-size, 2.4);
+		color: palette(color3);
+	}
+
+	h5 {
+		@include rem(font-size, 2.2);
+		color: palette(color3);
+	}
+
+	h6 {
+		@include rem(font-size, 2.0);
+		color: palette(color1, dark);
+	}
+}
+
+//
+// Posts
+//
+
+.hentry {
+	margin-bottom: 3em;
+}
+
+.entry-header {
+	position: relative;
+	padding-bottom: 1em;
+
+	&:before {
+		position: absolute;
+		top: 0;
+		left: -5000px;
+		right: 0;
+		bottom: 0;
+		z-index: 0;
+		content: "";
+		border-bottom: 2px solid palette(color3, light);
+	}
+
+	.entry-title,
+	.entry-meta {
+		position: relative;
+		z-index: 1;
+		display: block;
+	}
+
+	.entry-meta {
+		@include postmeta;
+	}
+}
+
+.entry-footer {
+	@include postmeta;
+	border-top: 1px solid palette(color1, light);
+	padding-top: 0.5em;
+
+	span {
+		margin-right: 0.5em;
+
+		&:last-of-type {
+			margin-right: 0;
+		}
+	}
+
+	.cat-links {
+
+	}
+
+	.comments-link {
+		@include iconify('\f086');
+	}
+
+	.edit-link {
+
+	}
+}
+
+body.single {
+
+	#content > img.wp-post-image {
+		display: block;
+		clear: both;
+		max-width: 100%;
+		height: auto;
+		margin-bottom: 1em;
+	}
+}
